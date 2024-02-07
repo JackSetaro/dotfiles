@@ -1,0 +1,33 @@
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+[user]
+	name = JackSetaro
+	email = 23753068+JackSetaro@users.noreply.github.com
+[init]
+	defaultBranch = main
+[color]
+	ui = auto
+[pull]
+	rebase = false
+[core]
+	excludesfile = /Users/jack/.gitignore_global
+	editor = code --wait
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --new-window --wait $MERGED
+[diff]
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --new-window --wait --diff $LOCAL $REMOTE
+
+[instaweb]
+	local = true
+	httpd = lighttpd -f
+	port = 4321
+	modulePath = /usr/lib/apache2/modules
+
+
